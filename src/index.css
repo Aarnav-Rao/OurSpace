@@ -1,0 +1,16 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+:root{--bg:#FAF9F6;--fg:#242424;--mute:#858585;--line:#E8E4DE;--accent:#8B3A4A;--lav:#B9A9D9}
+.dark{--bg:#171616;--fg:#EDEAE6;--mute:#8F8B87;--line:#2E2C2B;--accent:#D08A98;--lav:#8F82B5}
+body{@apply bg-bg text-fg font-sans antialiased;transition:background .3s,color .3s}
+@layer components{
+ .inp{@apply w-full bg-transparent border-b border-line py-2 outline-none placeholder:text-mute focus:border-accent transition-colors}
+ .pill{@apply bg-accent text-bg rounded-full px-5 py-2 text-sm transition-opacity hover:opacity-90 disabled:opacity-40}
+ .lnk{@apply text-mute text-sm hover:text-fg transition-colors}
+ .cap{@apply text-xs tracking-[.2em] uppercase text-mute}
+ .sec{@apply border-t border-line pt-8 mt-10}
+ .fade{animation:f .35s ease}
+}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+:root{--warm:#B58A5E;--sage:#6F9283}.dark{--warm:#D2A877;--sage:#8DB3A3;color-scheme:dark}
+select{@apply bg-transparent}select option{background:var(--bg);color:var(--fg)}
+input[type=checkbox]{accent-color:var(--accent)}
